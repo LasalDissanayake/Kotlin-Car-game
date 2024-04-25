@@ -2,6 +2,6 @@ package com.example.madgame
 
 interface GameTask {
 
-    fun closeGame(score:Int)
+    fun closeGame(mScore:Int)
 
 }

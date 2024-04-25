@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:id = "@+id/rootLayout"
     android:gravity="center"
+
     tools:context=".MainActivity">
 
 
@@ -27,7 +28,7 @@
         android:text="Start"
         app:backgroundTint = "#FD397C"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content" />
 
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->

@@ -5,6 +5,8 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.view.MotionEvent
 import android.view.View
+import android.graphics.Color
+
 
 class GameView (var c :Context, var gameTask: GameTask):View(c)
 {
@@ -46,7 +48,8 @@ class GameView (var c :Context, var gameTask: GameTask):View(c)
         )
 
         d.draw(canvas!!)
-        myPaint!!.color = color.GREEN
+        myPaint!!.color = Color.GREEN
+
         var highScore = 0
 
         for (i in otherCars.indices){
@@ -81,7 +84,7 @@ class GameView (var c :Context, var gameTask: GameTask):View(c)
             }
 
             }
-        myPaint!!.color = color.WHITE
+        myPaint!!.color = Color.WHITE
         myPaint!!.textSize = 40f
         canvas.drawText("Score : $score", 80f, 80f, myPaint!!)
         canvas.drawText("Speed : $speed", 380f, 80f, myPaint!!)
@@ -98,8 +101,14 @@ class GameView (var c :Context, var gameTask: GameTask):View(c)
                         myCarPosition--
                     }
                 }
-                
+                if (x1 > viewWidth /2){
+                    if (myCarPosition<2){
+                        myCarPosition++
+                    }
+                }
+                invalidate()
             }
+            MotionEvent.ACTION_UP ->{}
         }
         return true
     }
